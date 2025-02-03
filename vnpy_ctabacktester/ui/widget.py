@@ -7,6 +7,7 @@ from typing import List, Tuple
 import numpy as np
 import pyqtgraph as pg
 from pandas import DataFrame
+from vnpy_chartwizard.ui.sma_item import SmaItem
 from vnpy_chartwizard.ui.vqi_item import VqiItem
 
 from vnpy.trader.constant import Interval, Direction, Exchange
@@ -1215,6 +1216,7 @@ class CandleChartDialog(QtWidgets.QDialog):
         self.chart.add_plot("vqi", maximum_height=150)
         self.chart.add_item(CandleItem, "candle", "candle")
         self.chart.add_item(VolumeItem, "volume", "volume")
+        self.chart.add_item(SmaItem, "sma", "candle")
         self.chart.add_item(VqiItem, "vqi", "vqi")
         self.chart.add_cursor()
 
